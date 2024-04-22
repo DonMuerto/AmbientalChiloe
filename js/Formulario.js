@@ -57,7 +57,7 @@ const validarFormulario = (e) => {
             if(expresiones.email.test(e.target.value)){ 
 
             } else{
-               document.getElementById('grupo__rut')
+               document.getElementById('grupo__email')
             }
         break;
 
