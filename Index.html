@@ -7,52 +7,74 @@
 </head>
 <body>
     <div class="center">
-        <h1>Ambiental Chiloe</h1>
-        <form method="post">
-            <div class="txt_field">
-                <label for="Rut">Rut</label>
-                <input type="text" id="Rut" required>
+        <h1>Ambiental Chiloé</h1>
+        <form method="post" id="formulario">
+            <div class="txt_field" id="grupo__rut">
+                <label for="rut">rut</label>
+                <input type="text" name="rut" id="rut" >
             </div>
-            <div class="txt_field">
-                <label for="ApellidoM">Apellido Materno</label>
-                <input type="text" id="ApellidoM" required>
+            <br>
+            <br>
+            <div class="txt_field" id="grupo__materno">
+                <label for="materno">Apellido Materno</label>
+                <input type="text" name="materno" id="materno" >
             </div>
-            <div class="txt_field">
-                <label for="ApellidoP">Apellido Paterno</label>
-                <input type="text" id="ApellidoP" required>
+            <br>
+            <br>
+            <div class="txt_field" id="grupo__paterno">
+                <label for="paterno">Apellido Paterno</label>
+                <input type="text" name="paterno" id="paterno" >
             </div>
-            <div class="txt_field">
-                <label for="Nombre">Nombre</label>
-                <input type="text" id="Nombre" required>
+            <br>
+            <br>
+            <div class="txt_field" id="grupo__nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="Nombre" >
             </div>
+            <br>
+            <br>
             <div class="txt_field">
-                <label for="Fecha">Fecha de nacimiento</label>
-                <input type="date" id="Fecha" required>
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" name="fecha" id="fecha" >
             </div>
-            <div class="txt_field">
-                <label for="Edad" id="Edad">Edad</label>
-                <input type="number" required>
+            <br>
+            <br>
+            <div class="txt_field" id="grupo__edad">
+                <label for="edad" >Edad</label>
+                <input type="number" name="edad" id="edad" >
             </div>
-            <div class="txt_field">
+            <br>
+            <br>
+            <div class="txt_field" >
                 <label for="Genero">Género</label>
-                <input type="select" id="Genero" required>
+                <input type="select" name="genero" id="Genero" >
             </div>
-            <div class="txt_field">
-                <label for="Email">Email</label>
-                <input type="text" id="Email" required>
+            <br>
+            <br>
+            <div class="txt_field" id="grupo__email">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" >
             </div>
-            <div class="txt_field">
-                <label for="Celular">Celular</label>
-                <input type="number" id="Celular" required>
+            <br>
+            <br>
+            <div class="txt_field" id="grupo__celular">
+                <label for="celular">Celular</label>
+                <input type="number" name="celular" id="celular" >
             </div>
+            <br>
+            <br>
             <div class="txt_field">
                 <label for="Profesion">Profesión</label>
-                <input type="text" id="Profesion" required>
+                <input type="text" name="profesion" id="Profesion" >
             </div>
+            <br>
+            <br>
             <div class="txt_field">
                 <label for="Motivacion">Motivación para postular al trabajo</label>
-                <input type="textarea" id="Motivacion" required>
+                <input type="textarea" name="motivacion" id="Motivacion" >
             </div>
+            <br>
+            <br>
             <div>
                 <input type="submit" value="Enviar">
             </div>
