@@ -4,28 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/Index.css">
 </head>
 <body>
     <div class="center">
-        <h1>Login</h1>
+        <h1>Ambiental Chiloe</h1>
         <form method="post">
             <div class="txt_field">
-                <input type="text" required>
-                <span></span>
-                <label>Username</label>
+                <label for="Rut">Rut</label>
+                <input type="text" id="Rut" required>
             </div>
             <div class="txt_field">
-                <input type="password" required>
-                <span></span>
-                <label>Password</label>
+                <label for="ApellidoM">Apellido Materno</label>
+                <input type="text" id="ApellidoM" required>
             </div>
-            <div class="pass">Forgot Password?</div>
-            <input type="submit" value="Login">
-            <div class="signup_link">
-                Not a member? <a href="#">Signup</a>
+            <div class="txt_field">
+                <label for="ApellidoP">Apellido Paterno</label>
+                <input type="text" id="ApellidoP" required>
+            </div>
+            <div class="txt_field">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" required>
+            </div>
+            <div class="txt_field">
+                <label for="Fecha">Fecha de nacimiento</label>
+                <input type="date" id="Fecha" required>
+            </div>
+            <div class="txt_field">
+                <label for="Edad" id="Edad">Edad</label>
+                <input type="number" required>
+            </div>
+            <div class="txt_field">
+                <label for="Genero">Género</label>
+                <input type="select" id="Genero" required>
+            </div>
+            <div class="txt_field">
+                <label for="Email">Email</label>
+                <input type="text" id="Email" required>
+            </div>
+            <div class="txt_field">
+                <label for="Celular">Celular</label>
+                <input type="number" id="Celular" required>
+            </div>
+            <div class="txt_field">
+                <label for="Profesion">Profesión</label>
+                <input type="text" id="Profesion" required>
+            </div>
+            <div class="txt_field">
+                <label for="Motivacion">Motivación para postular al trabajo</label>
+                <input type="textarea" id="Motivacion" required>
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+            <div>
+                <input type="submit" value="Crear Carta">
             </div>
         </form>
     </div>
+
+    <script src="js/Formulario.js"></script>
 </body>
 </html>
