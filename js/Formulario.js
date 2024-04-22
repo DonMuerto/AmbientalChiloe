@@ -10,46 +10,54 @@ var Celular = document.getElementById('Celular')
 var Profesion = document.getElementById('Profesion')
 var Motivacion = document.getElementById('Motivacion')
 var Mensaje = document.getElementById('Mensaje')
-var EdadV = parseInt(Edad.value);
+var Carta = document.getElementById('Carta')
 
 Mensaje.style.color = 'red'
 
 function Enviar() {
     var MensajeError = [];
 
-    if (Rut.value.length > 8 && Rut.value.length < 11) {
-        MensajeError.push('Rut Tiene la cantidad correcta de caracteres (9 o 10)');
-    } else {
-        MensajeError.push('Rut No tiene la cantidad correcta de caracteres (debe ser entre 9 y 10)');
+    if (Rut.value.length !== 9 && Rut.value.length !== 10) {
+        MensajeError.push('Rut debe tener 9 o 10 caracteres');
     }
 
-    if (ApellidoM.value.length > 2 && ApellidoM.value.length < 21){
-        MensajeError.push('ApellidoM Tiene la cantidad correcta de caracteres (3 o 20)');
-    } else {
-        MensajeError.push('ApellidoM No tiene la cantidad correcta de caracteres (debe ser entre 3 y 20)');
+    if (ApellidoM.value.length < 3 || ApellidoM.value.length > 20) {
+        MensajeError.push('Apellido Materno debe tener entre 3 y 20 caracteres');
     }
-    if (ApellidoP.value.length > 2 && ApellidoP.value.length < 21){
-        MensajeError.push('ApellidoP Tiene la cantidad correcta de caracteres (3 o 20)');
-    } else {
-        MensajeError.push('ApellidoP No tiene la cantidad correcta de caracteres (debe ser entre 3 y 20)');
+
+    if (ApellidoP.value.length < 3 || ApellidoP.value.length > 20) {
+        MensajeError.push('Apellido Paterno debe tener entre 3 y 20 caracteres');
     }
-    if (Nombre.value.length > 2 && Nombre.value.length < 21){
-        MensajeError.push('Nombre Tiene la cantidad correcta de caracteres (3 o 20)');
-    } else {
-        MensajeError.push('Nombre No tiene la cantidad correcta de caracteres (debe ser entre 3 y 20)');
+
+    if (Nombre.value.length < 3 || Nombre.value.length > 20) {
+        MensajeError.push('Nombre debe tener entre 3 y 20 caracteres');
     }
+
     var EdadV = parseInt(Edad.value);
-
-    if (!isNaN(EdadV) && EdadV > 17 && EdadV < 36) {
-        MensajeError.push('Edad tiene la cantidad correcta (entre 18 y 35 años)');
-    } else {
-        MensajeError.push('Edad no tiene la cantidad correcta (debe ser entre 18 y 35 años)');
-    }
-    if (Celular.value.length > 8 && Celular.value.length < 13){
-        MensajeError.push('Celular Tiene la cantidad correcta de caracteres (9 o 12)');
-    } else {
-        MensajeError.push('Nombre No tiene la cantidad correcta de caracteres (debe ser entre 9 y 12)');
+    if (isNaN(EdadV) || EdadV < 18 || EdadV > 35) {
+        MensajeError.push('Edad debe ser un número entre 18 y 35');
     }
 
-    Mensaje.innerHTML = MensajeError.join(', ');
+    if (Celular.value.length < 9 || Celular.value.length > 12) {
+        MensajeError.push('Celular debe tener entre 9 y 12 caracteres');
+    }
+
+    Mensaje.innerHTML = MensajeError.join('<br>');
+}
+
+function CrearCarta() {
+    Enviar(); // Realiza la validación antes de generar la carta
+
+    var cartaTexto = "Carta de presentación e intención para postular al trabajo:\n\n";
+    cartaTexto += "Nombre completo: " + Nombre.value + " " + ApellidoP.value + " " + ApellidoM.value + "\n";
+    cartaTexto += "Rut: " + Rut.value + "\n";
+    cartaTexto += "Fecha de nacimiento: " + Fecha.value + "\n";
+    cartaTexto += "Edad: " + Edad.value + " años\n";
+    cartaTexto += "Género: " + Genero.value + "\n";
+    cartaTexto += "Email: " + Email.value + "\n";
+    cartaTexto += "Celular: " + Celular.value + "\n";
+    cartaTexto += "Profesión: " + Profesion.value + "\n\n";
+    cartaTexto += "Motivación para postular:\n" + Motivacion.value;
+
+    Carta.value = cartaTexto;
 }

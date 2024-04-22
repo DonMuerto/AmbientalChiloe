@@ -35,7 +35,11 @@
             </div>
             <div class="txt_field">
                 <label for="Genero">Género</label>
-                <input type="select" id="Genero" required>
+                <select id="Genero" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
             </div>
             <div class="txt_field">
                 <label for="Email">Email</label>
@@ -51,17 +55,17 @@
             </div>
             <div class="txt_field">
                 <label for="Motivacion">Motivación para postular al trabajo</label>
-                <input type="textarea" id="Motivacion" required>
+                <textarea id="Motivacion" required></textarea>
             </div>
             <div>
                 <input type="submit" onclick="Enviar()" value="Enviar">
             </div>
             <div>
-                <input type="submit" value="Crear Carta">
+                <input type="submit" onclick="CrearCarta()" value="Crear Carta">
             </div>
-            <div id="Mensaje">
-
-            </div>
+            <div id="Mensaje"></div>
+            <br>
+            <textarea id="Carta" rows="10" cols="50"></textarea>
         </form>
     </div>
 
