@@ -70,7 +70,7 @@
             <br>
             <div id="grupo__celular">
                 <label for="celular">Celular</label>
-                <input type="number" id="celular" required>
+                <input type="text" id="celular" required>
                 <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
@@ -88,11 +88,14 @@
             <br>
             <br>
             <div>
-                <input type="submit" value="Enviar">
+                <input type="submit" onclick="Enviar()" value="Enviar">
             </div>
             <div>
-                <input type="submit" value="Crear Carta">
+                <button type="button" onclick="CrearCarta()">Crear Carta</button>
             </div>
+            <div id="mensaje"></div>
+            <br>
+            <textarea id="carta" rows="10" cols="50"></textarea>
         </form>
     </div>
     <script src="JavaScript\Formulario.js"></script>

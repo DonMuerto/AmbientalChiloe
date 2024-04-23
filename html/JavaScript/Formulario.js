@@ -31,7 +31,16 @@ const validarFormulario = (e) => {
         break;
 
         case "edad":
-            validarCampo(expresiones.edad, e.target, 'edad');
+            let EdadV = e.target.value;
+            if ((EdadV > 17 && EdadV < 36)) {
+                document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-incorrecto")
+                document.getElementById(`grupo__edad`).classList.add("formulario_grupo-correcto")
+                document.querySelector(`#grupo__edad .formulario_input-error`).classList.remove('formulario_input-error-activo')
+            }else{
+                document.getElementById(`grupo__edad`).classList.add("formulario_grupo-incorrecto")
+                document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-correcto")
+                document.querySelector(`#grupo__edad .formulario_input-error`).classList.add('formulario_input-error-activo')
+            }
         break;
 
         case "email":
