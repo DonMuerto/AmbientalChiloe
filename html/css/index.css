@@ -1,3 +1,16 @@
-.incorrecto{
+.formulario_grupo-incorrecto{
 	background-color: red;
+}
+
+.formulario_grupo-correcto{
+	background-color: greenyellow;
+}
+
+.formulario_input-error{
+	font-size: medium;
+	display: none;
+}
+
+.formulario_input-error-activo{
+	display: block;
 }

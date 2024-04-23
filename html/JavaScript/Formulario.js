@@ -2,80 +2,71 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input'); // const se vuelve un arreglo con todos lo inputs que se encuentran dentro del formulario
 
 const expresiones = {
-    rut: /^\d{7,9}-[kK0-9]/,
-    materno: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras y espacios, pueden llevar acentos.
-    paterno: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras y espacios, pueden llevar acentos.
-    nombre: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,  // Letras y espacios, pueden llevar acentos.
+    rut: /^\d{7,9}-[kK0-9]$/,
+    materno: /^[a-zA-ZÀ-ÿ]{3,20}$/, // Letras y espacios, pueden llevar acentos.
+    paterno: /^[a-zA-ZÀ-ÿ]{3,20}$/, // Letras y espacios, pueden llevar acentos.
+    nombre: /^[a-zA-ZÀ-ÿ]{3,20}$/,  // Letras y espacios, pueden llevar acentos.
     edad: /^\d/,
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     celular: /^\d{9,12}$/ // /^(6|9)(\s)?\d{4}(\s)?\d{4}$/
 }
 
+
 const validarFormulario = (e) => {
-    switch (e.target.name){
+    switch (e.target.id){
         case "rut":
-             if(expresiones.rut.test(e.target.value)){ // expresiones.rut.test() <-- Retorna True or False
-                document.getElementById('grupo__rut').classList.remove("incorrecto")
-             } else{
-                document.getElementById('grupo__rut').classList.add("incorrecto")
-             }
+            validarCampo(expresiones.rut, e.target, 'rut');
         break;
 
         case "materno":
-            if(expresiones.materno.test(e.target.value)){ 
-                document.getElementById('grupo__materno').classList.remove("incorrecto")
-            } else{
-               document.getElementById('grupo__materno').classList.add("incorrecto")
-            }
+            validarCampo(expresiones.materno, e.target, 'materno');
         break;
 
         case "paterno":
-            if(expresiones.paterno.test(e.target.value)){ 
-                document.getElementById('grupo__paterno').classList.remove("incorrecto")
-            } else{
-               document.getElementById('grupo__paterno').classList.add("incorrecto")
-            }
+            validarCampo(expresiones.paterno, e.target, 'paterno');
         break;
             
         case "nombre":
-            if(expresiones.nombre.test(e.target.value)){ 
-                document.getElementById('grupo__nombre').classList.remove("incorrecto")
-            } else{
-               document.getElementById('grupo__nombre').classList.add("incorrecto")
-            }
+            validarCampo(expresiones.nombre, e.target, 'nombre');
         break;
 
         case "edad":
-            if(expresiones.edad.test(e.target.value)){
-                document.getElementById('grupo__edad').classList.remove("incorrecto") 
-            } else{
-               document.getElementById('grupo__edad').classList.add("incorrecto")
-            }
+            validarCampo(expresiones.edad, e.target, 'edad');
         break;
 
         case "email":
-            if(expresiones.email.test(e.target.value)){ 
-                document.getElementById('grupo__email').classList.remove("incorrecto")
-            } else{
-               document.getElementById('grupo__email').classList.add("incorrecto")
-            }
+            validarCampo(expresiones.email, e.target, 'email');
         break;
 
         case "celular":
-            if(expresiones.celular.test(e.target.value)){ // expresiones.celular.test() <-- Retorna True or False
-                document.getElementById('grupo__celular').classList.remove("incorrecto")
-            } else{
-               document.getElementById('grupo__celular').classList.add("incorrecto")
-            }
+            validarCampo(expresiones.celular, e.target, 'celular');
         break;
+    }
+}
+
+const validarCampo = (expresion, input, campo) => {
+
+    if(expresion.test(input.value)){ // expresiones.rut.test() <-- Retorna True or False
+        document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-incorrecto")
+        document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-correcto")
+        document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.remove('formulario_input-error-activo')
+    } else{
+        document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-incorrecto")
+        document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-correcto")
+        document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.add('formulario_input-error-activo')
     }
 }
 
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
 });
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    formulario.reset();
+
+    document.querySelectorAll('.formulario_grupo-correcto').forEach((p) => {
+        p.classList.remove('formulario_grupo-correcto')
+    });
 });

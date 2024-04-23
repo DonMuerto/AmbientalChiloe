@@ -10,69 +10,80 @@
     <div class="center">
         <h1>Ambiental Chiloé</h1>
         <form method="post" id="formulario">
-            <div id="grupo__rut" class="">
+            <div id="grupo__rut" >
                 <label for="rut">rut</label>
-                <input type="text" name="rut" id="rut" class="formulario__input">
+                <input type="text" id="rut" >
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div id="grupo__materno">
                 <label for="materno">Apellido Materno</label>
-                <input type="text" name="materno" id="materno" class="formulario__input">
+                <input type="text" id="materno" required>
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div id="grupo__paterno">
                 <label for="paterno">Apellido Paterno</label>
-                <input type="text" name="paterno" id="paterno" class="formulario__input">
+                <input type="text" id="paterno" required>
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div id="grupo__nombre">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="Nombre" class="formulario__input">
+                <input type="text" id="nombre" required>
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div>
                 <label for="fecha">Fecha de nacimiento</label>
-                <input type="date" name="fecha" id="fecha" class="formulario__input">
+                <input type="date" id="fecha" required>
             </div>
             <br>
             <br>
             <div id="grupo__edad">
                 <label for="edad" >Edad</label>
-                <input type="number" name="edad" id="edad" class="formulario__input">
+                <input type="number" id="edad" required>
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div >
                 <label for="Genero">Género</label>
-                <input type="select" name="genero" id="Genero" class="formulario__input">
+                <select id="Genero" required>
+                    <option value="Otro">Otro</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
             </div>
             <br>
             <br>
             <div id="grupo__email">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" class="formulario__input">
+                <input type="text" id="email" required>
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div id="grupo__celular">
                 <label for="celular">Celular</label>
-                <input type="number" name="celular" id="celular" class="formulario__input">
+                <input type="number" id="celular" required>
+                <p class="formulario_input-error">diavlo</p>
             </div>
             <br>
             <br>
             <div>
                 <label for="Profesion">Profesión</label>
-                <input type="text" name="profesion" id="Profesion" class="formulario__input">
+                <input type="text" id="profesion" required>
             </div>
             <br>
             <br>
             <div>
                 <label for="Motivacion">Motivación para postular al trabajo</label>
-                <input type="textarea" name="motivacion" id="Motivacion" class="formulario__input">
+                <input type="textarea" id="motivacion" required>
             </div>
             <br>
             <br>
