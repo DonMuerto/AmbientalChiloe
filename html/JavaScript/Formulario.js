@@ -6,7 +6,7 @@ const expresiones = {
     materno: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras y espacios, pueden llevar acentos.
     paterno: /^[a-zA-ZÀ-ÿ\s]{3,20}$/, // Letras y espacios, pueden llevar acentos.
     nombre: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,  // Letras y espacios, pueden llevar acentos.
-    edad: /^\d{2}}$/,
+    edad: /^\d/,
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     celular: /^\d{9,12}$/ // /^(6|9)(\s)?\d{4}(\s)?\d{4}$/
 }
@@ -55,9 +55,9 @@ const validarFormulario = (e) => {
 
         case "email":
             if(expresiones.email.test(e.target.value)){ 
-                document.getElementById('grupo__rut').classList.remove("incorrecto")
+                document.getElementById('grupo__email').classList.remove("incorrecto")
             } else{
-               document.getElementById('grupo__rut').classList.add("incorrecto")
+               document.getElementById('grupo__email').classList.add("incorrecto")
             }
         break;
 
