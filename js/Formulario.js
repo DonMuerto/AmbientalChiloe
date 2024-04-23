@@ -14,6 +14,7 @@ var Carta = document.getElementById('Carta');
 
 Mensaje.style.color = 'red';
 
+//Formatea el rut para que se ingrese con el formato esperado
 function formatearRut(rut) {
     
     rut = rut.replace(/[^\dKk]/g, '');
@@ -37,28 +38,28 @@ function Enviar() {
     if (!rutRegex.test(rutFormateado)) {
         MensajeError.push('Rut no es válido. Debe estar en el formato correcto.');
     }
-
+    // Validacion apellido Materno
     if (ApellidoM.value.length < 3 || ApellidoM.value.length > 20) {
         MensajeError.push('Apellido Materno debe tener entre 3 y 20 caracteres');
     }
-
+    // Validacion apellido Paterno
     if (ApellidoP.value.length < 3 || ApellidoP.value.length > 20) {
         MensajeError.push('Apellido Paterno debe tener entre 3 y 20 caracteres');
     }
-
+    // Validacion Nombre
     if (Nombre.value.length < 3 || Nombre.value.length > 20) {
         MensajeError.push('Nombre debe tener entre 3 y 20 caracteres');
     }
-
+    // Validacion Edad
     var EdadV = parseInt(Edad.value);
     if (isNaN(EdadV) || EdadV < 18 || EdadV > 35) {
         MensajeError.push('Edad debe ser un número entre 18 y 35');
     }
-
+    // Validacion Celular
     if (Celular.value.length < 9 || Celular.value.length > 12) {
         MensajeError.push('Celular debe tener entre 9 y 12 caracteres');
     }
-
+    //Se añaden los mensajes de error, separados por un <br>
     Mensaje.innerHTML = MensajeError.join('<br>');
 }
 
