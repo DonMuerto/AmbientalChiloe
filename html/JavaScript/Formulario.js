@@ -94,5 +94,4 @@ formulario.addEventListener('submit', (e) => {
         });
     }
 
-    
 });

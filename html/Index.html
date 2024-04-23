@@ -11,30 +11,30 @@
         <h1>Ambiental Chiloé</h1>
         <form method="post" id="formulario">
             <div id="grupo__rut" >
-                <label for="rut">rut</label>
+                <label for="rut">Rut</label>
                 <input type="text" id="rut" >
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error">Rut no es válido. Debe estar en el formato correcto.</p>
             </div>
             <br>
             <br>
             <div id="grupo__materno">
                 <label for="materno">Apellido Materno</label>
                 <input type="text" id="materno" required>
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error">Apellido Materno debe tener entre 3 y 20 caracteres</p>
             </div>
             <br>
             <br>
             <div id="grupo__paterno">
                 <label for="paterno">Apellido Paterno</label>
                 <input type="text" id="paterno" required>
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error">Apellido Materno debe tener entre 3 y 20 caracteres</p>
             </div>
             <br>
             <br>
             <div id="grupo__nombre">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" required>
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error">Nombre debe tener entre 3 y 20 caracteres</p>
             </div>
             <br>
             <br>
@@ -47,7 +47,7 @@
             <div id="grupo__edad">
                 <label for="edad" >Edad</label>
                 <input type="number" id="edad" required>
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error">Edad debe ser un número entre 18 y 35</p>
             </div>
             <br>
             <br>
@@ -64,14 +64,14 @@
             <div id="grupo__email">
                 <label for="email">Email</label>
                 <input type="text" id="email" required>
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error"></p>
             </div>
             <br>
             <br>
             <div id="grupo__celular">
                 <label for="celular">Celular</label>
                 <input type="text" id="celular" required>
-                <p class="formulario_input-error">diavlo</p>
+                <p class="formulario_input-error">Celular debe tener entre 9 y 12 caracteres</p>
             </div>
             <br>
             <br>
@@ -90,13 +90,6 @@
             <div>
                 <input type="submit" onclick="Enviar()" value="Enviar">
             </div>
-            <div>
-                <button type="button" onclick="CrearCarta()">Crear Carta</button>
-            </div>
-            <div id="mensaje"></div>
-            <br>
-            <textarea id="carta" rows="10" cols="50"></textarea>
-        </form>
     </div>
     <script src="JavaScript\Formulario.js"></script>
 </body>
