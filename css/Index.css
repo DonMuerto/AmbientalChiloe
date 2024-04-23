@@ -1,0 +1,220 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    height: 100vh;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.center h1{
+    position:sticky;
+   /* border: 1px solid; */
+    text-align: center;
+    color: #2691d9;
+}
+.Linea::before{
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+.center form{
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid;*/
+    height: 100%;
+    flex-wrap:nowrap;
+}
+.Inputs{
+    display: flex;
+    justify-content:space-around;
+    position: relative;
+    flex-wrap: wrap;
+    /*border: 1px solid;*/
+}
+form .txt_field {
+    position: relative;
+    margin: 30px 0;
+}
+.Columna{
+    align-content:space-around;
+    width: 400px;
+    /*border: 1px solid;*/
+    flex-wrap: wrap;
+}
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.txt_field textarea {
+    width: 90%;
+    position: relative;
+    left: 5%;
+    height: auto; 
+    min-height: 100px; 
+    font-size: 16px;
+    border: none;
+    background: rgb(241, 245, 245);
+    outline: none;
+    resize: none; 
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+.txt_fecha{
+    border-bottom: 2px solid #2691d9
+}
+.txt_fecha input{
+    position: relative;
+    left: 5%;
+    border: none;
+    background-color: rgb(241, 245, 245);
+    width: 90%;
+    text-align: center;
+    align-self: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.txt_genero{
+    display: flex;
+    flex-direction: column;
+}
+.txt_genero select {
+    margin-top: 6px;
+    border: 1px solid #2691d9;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 2px;
+    text-align: center;
+    font-size: medium;
+    width: 90%;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.txt_genero select:focus,
+.txt_genero select:valid {
+    width: 100%;
+}
+.txt_fecha label{
+    position: relative;
+    left: 5%;
+    color: #2691d9;
+    font-size: 16px;
+}
+.txt_genero label{
+    margin-left: 5%;
+    font-size: 16px;
+    color: #2691d9;
+}
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 90%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+}
+.txt_field input:focus ~  span::before,
+.txt_field input:valid ~  span::before{
+    width: 100%;
+}
+.txt_field textarea:focus ~ label,
+.txt_field textarea:valid ~ label{
+    top: -15px;
+    color: #2691d9;
+}
+.txt_field textarea:focus ~  span::before,
+.txt_field textarea:valid ~  span::before{
+    width: 100%;
+}
+.Carta{
+    width: 90%;
+    position: relative;
+    left: 5%;
+    height: auto; 
+    min-height: 250px; 
+    font-size: 16px;
+    border: none;
+    background: rgb(241, 245, 245);
+    outline: none;
+    resize: none; 
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+button{
+    position: relative;
+    left: 5%;
+    top: -35%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: .5s;
+}
+button:hover{
+    height: 55px;
+    width: 117px;
+    left: 4.5%;
+    
+}
+.Error{
+    position: relative;
+    left: 5%;
+}
+input[type="submit"]{
+    margin-top: 1%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: .5s;
+}
+input[type="submit"]:hover{
+    height: 55px;
+    width: 85%;
+    left: 7%;
+}
+

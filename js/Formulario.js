@@ -66,7 +66,7 @@ function Enviar() {
 function formatFechaNacimiento(fecha) {
     // Obtener los componentes de la fecha
     var date = new Date(fecha);
-    var dia = date.getDate();
+    var dia = (date.getDate() + 1);
     var mesNumero = date.getMonth(); // Obtener el número de mes (de 0 a 11)
     var año = date.getFullYear();
 

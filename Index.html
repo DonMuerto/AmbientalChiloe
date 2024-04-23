@@ -3,69 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\Index.css">
     <title>Login</title>
 </head>
 <body>
     <div class="center">
         <h1>Ambiental Chiloe</h1>
+        <span class="Linea"></span>
         <form method="post">
-            <div class="txt_field">
-                <label for="Rut">Rut</label>
-                <input type="text" id="Rut" required>
+            <div class="Inputs">
+                <div class="Columna">
+                    <div class="txt_field">
+                        
+                        <input type="text" id="Rut" required>
+                        <span></span>
+                        <label for="Rut">Rut</label>
+                    </div>
+                    <div class="txt_field">                        
+                        <input type="text" id="ApellidoM" required>
+                        <span></span>
+                        <label for="ApellidoM">Apellido Materno</label>
+                    </div>
+                    <div class="txt_field">
+                        
+                        <input type="text" id="ApellidoP" required>
+                        <span></span>
+                        <label for="ApellidoP">Apellido Paterno</label>
+                    </div>
+                    <div class="txt_field">
+                        
+                        <input type="text" id="Nombre" required>
+                        <span></span>
+                        <label for="Nombre">Nombre</label>
+                    </div>
+                    <div class="txt_fecha">
+                        <label for="Fecha">Fecha de nacimiento</label>
+                        <input type="date" id="Fecha" required>
+                    </div>
+                </div>
+                <div class="Columna">
+                    <div class="txt_field">
+                        
+                        <input type="number" id="Edad" required>
+                        <span></span>
+                        <label for="Edad" >Edad</label>
+                    </div>
+                    <div class="txt_genero">
+                        <label for="Genero">Género</label>
+                        <select id="Genero" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Otro">Otro</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="txt_field">
+                        
+                        <input type="text" id="Email" required>
+                        <span></span>
+                        <label for="Email">Email</label>
+                    </div>
+                    <div class="txt_field">
+                        
+                        <input type="text" id="Celular" required>
+                        <span></span>
+                        <label for="Celular">Celular +56</label>
+                    </div>
+                    <div class="txt_field">
+                        
+                        <input type="text" id="Profesion" required>
+                        <span></span>
+                        <label for="Profesion">Profesión</label>
+                    </div>                                        
+                </div>                
             </div>
             <div class="txt_field">
-                <label for="ApellidoM">Apellido Materno</label>
-                <input type="text" id="ApellidoM" required>
-            </div>
-            <div class="txt_field">
-                <label for="ApellidoP">Apellido Paterno</label>
-                <input type="text" id="ApellidoP" required>
-            </div>
-            <div class="txt_field">
-                <label for="Nombre">Nombre</label>
-                <input type="text" id="Nombre" required>
-            </div>
-            <div class="txt_field">
-                <label for="Fecha">Fecha de nacimiento</label>
-                <input type="date" id="Fecha" required>
-            </div>
-            <div class="txt_field">
-                <label for="Edad" >Edad</label>
-                <input type="number" id="Edad" required>
-            </div>
-            <div class="txt_field">
-                <label for="Genero">Género</label>
-                <select id="Genero" required>
-                    <option value="Otro">Otro</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>                    
-                </select>
-            </div>
-            <div class="txt_field">
-                <label for="Email">Email</label>
-                <input type="text" id="Email" required>
-            </div>
-            <div class="txt_field">
-                <label for="Celular">Celular +56</label>
-                <input type="text" id="Celular" required>
-            </div>
-            <div class="txt_field">
-                <label for="Profesion">Profesión</label>
-                <input type="text" id="Profesion" required>
-            </div>
-            <div class="txt_field">
+                        
+                <textarea id="Motivacion"  required></textarea>
                 <label for="Motivacion">Motivación para postular al trabajo</label>
-                <textarea id="Motivacion" required></textarea>
             </div>
-            <div>
-                <input type="submit" onclick="Enviar()" value="Enviar">
-            </div>
+            <br>
             <div>
                 <button type="button" onclick="CrearCarta()">Crear Carta</button>
             </div>
-            <div id="Mensaje"></div>
+            <textarea class="Carta" id="Carta" rows="10" cols="50"></textarea>
             <br>
-            <textarea id="Carta" rows="10" cols="50"></textarea>
+            <div class="Error" id="Mensaje"></div>
+            <div>
+                <input type="submit" onclick="Enviar()" value="Enviar">
+            </div>
+            
+
         </form>
     </div>
 
