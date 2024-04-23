@@ -11,6 +11,15 @@ const expresiones = {
     celular: /^\d{9,12}$/ // /^(6|9)(\s)?\d{4}(\s)?\d{4}$/
 }
 
+const celdas = {
+    rut: false,
+    nombre: false,
+    materno: false,
+    paterno: false,
+    edad: false,
+    email: false,
+    celular: false
+}
 
 const validarFormulario = (e) => {
     switch (e.target.id){
@@ -36,10 +45,12 @@ const validarFormulario = (e) => {
                 document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-incorrecto")
                 document.getElementById(`grupo__edad`).classList.add("formulario_grupo-correcto")
                 document.querySelector(`#grupo__edad .formulario_input-error`).classList.remove('formulario_input-error-activo')
+                celdas['edad'] = true;
             }else{
                 document.getElementById(`grupo__edad`).classList.add("formulario_grupo-incorrecto")
                 document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-correcto")
                 document.querySelector(`#grupo__edad .formulario_input-error`).classList.add('formulario_input-error-activo')
+                celdas['edad'] = false;
             }
         break;
 
@@ -59,10 +70,12 @@ const validarCampo = (expresion, input, campo) => {
         document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-incorrecto")
         document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-correcto")
         document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.remove('formulario_input-error-activo')
+        celdas[campo] = true;
     } else{
         document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-incorrecto")
         document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-correcto")
         document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.add('formulario_input-error-activo')
+        celdas[campo] = false;
     }
 }
 
@@ -73,9 +86,13 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    formulario.reset();
+    if(celdas.rut && celdas.paterno && celdas.materno && celdas.nombre && celdas.email &&celdas.edad && celdas.celular){
+        formulario.reset();
 
-    document.querySelectorAll('.formulario_grupo-correcto').forEach((p) => {
-        p.classList.remove('formulario_grupo-correcto')
-    });
+        document.querySelectorAll('.formulario_grupo-correcto').forEach((p) => {
+            p.classList.remove('formulario_grupo-correcto')
+        });
+    }
+
+    
 });
