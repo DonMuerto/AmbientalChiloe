@@ -26,6 +26,15 @@ function formatearRut(rut) {
     return rut;
 }
 
+$('#Rut').focusout(function(event){
+    var rut = $(this).val().replace(/[^\dKk]/g, '');
+
+    if (rut.length > 1) {
+        rut = rut.slice(0, -1).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + '-' + rut.slice(-1);
+    }
+    $(this).val(rut); // stea
+});
+
 function Enviar() {
     var MensajeError = [];
 
