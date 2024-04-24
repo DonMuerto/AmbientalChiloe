@@ -11,11 +11,17 @@ const expresiones = {
     celular: /^\d{9,12}$/ // /^(6|9)(\s)?\d{4}(\s)?\d{4}$/
 }
 
-let carta_rut = document.getElementById('rut');
 let text_area = document.getElementById('carta');
+const datos = [];
 
 document.getElementById('consola').addEventListener('click', () => {
-    text_area.value = carta_rut.value
+    for (var i = 0; i < (inputs.length)-1; i++){
+        let dato = inputs[i]
+        datos.push(dato.value) 
+    }
+    
+    text_area.value = datos
+    
   });
 
   
