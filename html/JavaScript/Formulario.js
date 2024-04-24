@@ -20,7 +20,19 @@ document.getElementById('consola').addEventListener('click', () => {
         datos.push(dato.value) 
     }
     
-    text_area.value = datos
+    let cartaTexto = "Carta de presentación e intención para postular al trabajo:\n\n";
+    cartaTexto += "Nombre completo: " + datos[0] + " " + datos[0] + " " + datos[0] + "\n";
+    cartaTexto += "Rut: " + datos[0] + "\n";
+    cartaTexto += "Fecha de nacimiento: " + datos[0] + "\n"; // Formatear la fecha de nacimiento
+    cartaTexto += "Edad: " + datos[0] + " años\n";
+    cartaTexto += "Género: " + datos[0] + "\n";
+    cartaTexto += "Email: " + datos[0] + "\n";
+    cartaTexto += "Celular: " + datos[0] + "\n";
+    cartaTexto += "Profesión: " + datos[0] + "\n\n";
+    cartaTexto += "Motivación para postular:\n" + datos[0];
+
+    
+    text_area.value = cartaTexto
     
   });
 
