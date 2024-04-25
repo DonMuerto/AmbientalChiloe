@@ -42,7 +42,7 @@ document.getElementById('consola').addEventListener('click', () => {
     cartaTexto += "Email: " + datos[7] + "\n";
     cartaTexto += "Celular: " + datos[8] + "\n";
     cartaTexto += "Profesión: " + datos[9] + "\n\n";
-    cartaTexto += "Motivación para postular:\n" + datos[10];
+    cartaTexto += "Motivación para postular: " + datos[10];
 
     text_area.value = cartaTexto
     console.log(selectGenero.value)
