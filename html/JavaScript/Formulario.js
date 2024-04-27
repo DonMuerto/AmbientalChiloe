@@ -16,37 +16,13 @@ let selectGenero = document.getElementById('Genero');
 let text_area = document.getElementById('carta');
 
 
-
 selectGenero.addEventListener('change', function() {
     genero = selectGenero.value; 
 });
 
 
 
-document.getElementById('consola').addEventListener('click', () => {
-    const datos = [];
-    
-    for (var i = 0; i < inputs.length; i++){
-        let dato = inputs[i].value;
-        datos.push(dato);
-    }
 
-    datos.splice(6, 0, genero);
-    
-    let cartaTexto = "Carta de presentación e intención para postular al trabajo:\n\n";
-    cartaTexto += "Nombre completo: " + datos[3] + " " + datos[2] + " " + datos[1] + "\n";
-    cartaTexto += "Rut: " + datos[0] + "\n";
-    cartaTexto += "Fecha de nacimiento: " + datos[4] + "\n"; 
-    cartaTexto += "Edad: " + datos[5] + " años\n";
-    cartaTexto += "Género: " + datos[6] + "\n";
-    cartaTexto += "Email: " + datos[7] + "\n";
-    cartaTexto += "Celular: " + datos[8] + "\n";
-    cartaTexto += "Profesión: " + datos[9] + "\n\n";
-    cartaTexto += "Motivación para postular: " + datos[10];
-
-    text_area.value = cartaTexto
-    console.log(selectGenero.value)
-  });
 
   
 
@@ -126,7 +102,7 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if(celdas.rut && celdas.paterno && celdas.materno && celdas.nombre && celdas.email &&celdas.edad && celdas.celular){
-        // formulario.reset();
+        formulario.reset();
 
         document.querySelectorAll('.formulario_grupo-correcto').forEach((p) => {
             p.classList.remove('formulario_grupo-correcto')
@@ -134,3 +110,32 @@ formulario.addEventListener('submit', (e) => {
     }
 
 });
+
+document.getElementById('generarCAR').addEventListener('click', () => {
+    const datos = [];
+    
+    if(celdas.rut && celdas.paterno && celdas.materno && celdas.nombre && celdas.email &&celdas.edad && celdas.celular){
+        
+        for (var i = 0; i < inputs.length; i++){
+            let dato = inputs[i].value;
+            datos.push(dato);
+        }
+    
+        datos.splice(6, 0, genero);
+        
+        let cartaTexto = "Carta de presentación e intención para postular al trabajo:\n\n";
+        cartaTexto += "Nombre completo: " + datos[3] + " " + datos[2] + " " + datos[1] + "\n";
+        cartaTexto += "Rut: " + datos[0] + "\n";
+        cartaTexto += "Fecha de nacimiento: " + datos[4] + "\n"; 
+        cartaTexto += "Edad: " + datos[5] + " años\n";
+        cartaTexto += "Género: " + datos[6] + "\n";
+        cartaTexto += "Email: " + datos[7] + "\n";
+        cartaTexto += "Celular: " + datos[8] + "\n";
+        cartaTexto += "Profesión: " + datos[9] + "\n\n";
+        cartaTexto += "Motivación para postular: " + datos[10];
+    
+        text_area.value = cartaTexto
+
+    }
+    
+  });
