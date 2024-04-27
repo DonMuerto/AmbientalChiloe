@@ -14,17 +14,13 @@ const expresiones = {
 var genero = "Otro";
 let selectGenero = document.getElementById('Genero');
 let text_area = document.getElementById('carta');
+let fecha = document.getElementById('fecha');
 
 
 selectGenero.addEventListener('change', function() {
     genero = selectGenero.value; 
 });
 
-
-
-
-
-  
 
 const celdas = {
     rut: false,
@@ -94,6 +90,24 @@ const validarCampo = (expresion, input, campo) => {
     }
 }
 
+function formatFechaNacimiento(fecha) {
+    // Obtener los componentes de la fecha
+    var date = new Date(fecha);
+    var dia = (date.getDate() + 1);
+    var mesNumero = date.getMonth(); // Obtener el número de mes (de 0 a 11)
+    var año = date.getFullYear();
+
+    // Array con los nombres de los meses en español
+    var nombresMeses = [
+        'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+    ];
+
+    // Formatear la fecha como "día de mes de año"
+    var mesNombre = nombresMeses[mesNumero]; // Obtener el nombre del mes
+    return dia + ' de ' + mesNombre + ' de ' + año;
+}
+
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
 });
@@ -102,7 +116,7 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if(celdas.rut && celdas.paterno && celdas.materno && celdas.nombre && celdas.email &&celdas.edad && celdas.celular){
-        formulario.reset();
+        // formulario.reset();
 
         document.querySelectorAll('.formulario_grupo-correcto').forEach((p) => {
             p.classList.remove('formulario_grupo-correcto')
@@ -126,7 +140,7 @@ document.getElementById('generarCAR').addEventListener('click', () => {
         let cartaTexto = "Carta de presentación e intención para postular al trabajo:\n\n";
         cartaTexto += "Nombre completo: " + datos[3] + " " + datos[2] + " " + datos[1] + "\n";
         cartaTexto += "Rut: " + datos[0] + "\n";
-        cartaTexto += "Fecha de nacimiento: " + datos[4] + "\n"; 
+        cartaTexto += "Fecha de nacimiento: " + formatFechaNacimiento(fecha.value) + "\n"; 
         cartaTexto += "Edad: " + datos[5] + " años\n";
         cartaTexto += "Género: " + datos[6] + "\n";
         cartaTexto += "Email: " + datos[7] + "\n";
