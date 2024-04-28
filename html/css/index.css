@@ -14,3 +14,55 @@
 .formulario_input-error-activo{
 	display: block;
 }
+
+div{
+	border: 1px solid;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+}
+
+.center{
+	border: 1px solid;
+	height: 750px;
+	width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.formout{
+	width: 100%;
+	height: fit-content;
+	display: flex;
+}
+
+.cont:first-child{
+	margin: 10px;
+	width:fit-content;
+	height:fit-content;
+	flex: 1;
+}
+.cont:last-child{
+	margin: 10px;
+	font-size: medium;
+	display: flex;
+	flex-wrap: wrap;
+	width:fit-content;
+	height:fit-content;
+	flex: 2;
+}
+
+.formin{
+	display: flex;
+	margin: 10px;
+	gap: 10px;
+}
+
+
+
+
+
+
