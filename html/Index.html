@@ -11,7 +11,9 @@
 
             <div class="formout1">
                 <div class="cont1">
-                    <h1>Datos Personales</h1>
+                    <h1 style="text-shadow: 2px 1.4px 2px rgb(180, 176, 176); 
+                        text-align: center; font-family:Georgia, 
+                        'Times New Roman', Times, serif;">  Datos Personales    </h1>
                 </div>
 
                 <div class="cont1">
@@ -86,16 +88,14 @@
             <div class="formout2">
                 <div class="cont2">
                     <div class="formin">
-                        <button id="generarCAR">Generar carta</button>
+                        <button type="button" id="generarCAR">Generar carta</button>
                     </div>
                     <div class="formin">
-                        <textarea id="carta" rows="10" cols="50"></textarea>
+                        <textarea style="resize: none; font-size:small;" id="carta" rows="10" cols="50"></textarea>
                     </div>
                 </div>
 
                 <div class="cont2">
-                    <br>
-                    <br>
                     <div class="formin">
                         <div class="lain">
                             <label   label for="Profesion">Profesión</label>
@@ -107,13 +107,15 @@
                             <label for="Motivacion">Motivación para postular al trabajo</label>
                         <input type="textarea" id="motivacion" class="inputStyle" required>
                         </div>
-                        
                     </div>
+                    <br>
+                    <br>
                     <div class="formin">
-                        <input type="submit" onclick="Enviar()" value="Enviar">
+                        <div class="lain">
+                            <label for=""></label>
+                            <input type="submit" onclick="Enviar()" value="Enviar">
+                        </div>
                     </div>
-                    
-                    
                 </div>
             </div>
     <script src="JavaScript\Formulario.js"></script>

@@ -54,12 +54,14 @@ const validarFormulario = (e) => {
             let EdadV = e.target.value;
             if ((EdadV > 17 && EdadV < 36)) {
                 document.getElementById(`grupo__edad`).classList.remove("formulario_input-error")
-                document.getElementById(`grupo__edad`).classList.add("formulario_grupo-correcto")
+                document.querySelector(`#grupo__edad .inputStyle`).classList.add("formulario_grupo-correcto")
+                document.querySelector(`#grupo__edad .inputStyle`).classList.remove("formulario_grupo-incorrecto")
                 document.querySelector(`#grupo__edad .formulario_input-error`).classList.remove('formulario_input-error-activo')
                 celdas['edad'] = true;
             }else{
                 document.getElementById(`grupo__edad`).classList.add("formulario_input-error")
                 document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-correcto")
+                document.querySelector(`#grupo__edad .inputStyle`).classList.add("formulario_grupo-incorrecto")
                 document.querySelector(`#grupo__edad .formulario_input-error`).classList.add('formulario_input-error-activo')
                 celdas['edad'] = false;
             }
@@ -79,12 +81,15 @@ const validarCampo = (expresion, input, campo) => {
 
     if(expresion.test(input.value)){ // expresiones.rut.test() <-- Retorna True or False
         document.getElementById(`grupo__${campo}`).classList.remove("formulario_input-error")
-        document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-correcto")
+        document.querySelector(`#grupo__${campo} .inputStyle`).classList.add("formulario_grupo-correcto")
+        document.querySelector(`#grupo__${campo} .inputStyle`).classList.remove("formulario_grupo-incorrecto")
         document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.remove('formulario_input-error-activo')
         celdas[campo] = true;
     } else{
         document.getElementById(`grupo__${campo}`).classList.add("formulario_input-error")
         document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-correcto")
+        document.querySelector(`#grupo__${campo} .inputStyle`).classList.add("formulario_grupo-incorrecto")
+        document.querySelector(`#grupo__${campo} .inputStyle`).classList.remove("formulario_grupo-correcto")
         document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.add('formulario_input-error-activo')
         celdas[campo] = false;
     }
@@ -116,7 +121,7 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if(celdas.rut && celdas.paterno && celdas.materno && celdas.nombre && celdas.email &&celdas.edad && celdas.celular){
-        // formulario.reset();
+        formulario.reset();
 
         document.querySelectorAll('.formulario_grupo-correcto').forEach((p) => {
             p.classList.remove('formulario_grupo-correcto')
@@ -127,16 +132,15 @@ formulario.addEventListener('submit', (e) => {
 
 document.getElementById('generarCAR').addEventListener('click', () => {
     const datos = [];
-    
+
     if(celdas.rut && celdas.paterno && celdas.materno && celdas.nombre && celdas.email &&celdas.edad && celdas.celular){
-        
         for (var i = 0; i < inputs.length; i++){
             let dato = inputs[i].value;
             datos.push(dato);
         }
-    
+
         datos.splice(6, 0, genero);
-        
+
         let cartaTexto = "Carta de presentación e intención para postular al trabajo:\n\n";
         cartaTexto += "Nombre completo: " + datos[3] + " " + datos[2] + " " + datos[1] + "\n";
         cartaTexto += "Rut: " + datos[0] + "\n";
@@ -147,9 +151,10 @@ document.getElementById('generarCAR').addEventListener('click', () => {
         cartaTexto += "Celular: " + datos[8] + "\n";
         cartaTexto += "Profesión: " + datos[9] + "\n\n";
         cartaTexto += "Motivación para postular: " + datos[10];
-    
-        text_area.value = cartaTexto
 
+        text_area.value = cartaTexto
+    }else{
+        text_area.value = 'Debe de ingresar los datos solicitados' ;
     }
     
-  });
+    });
