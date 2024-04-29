@@ -1,13 +1,8 @@
-.formulario_grupo-incorrecto{
-	background-color: red;
-}
-
 .formulario_grupo-correcto{
 	background-color: greenyellow;
 }
 
 .formulario_input-error{
-	font-size: medium;
 	display: none;
 }
 
@@ -22,43 +17,98 @@ div{
 body{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
+
 
 .center{
 	border: 1px solid;
-	height: 750px;
-	width: 800px;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-
-.formout{
-	width: 100%;
 	height: fit-content;
+	width: 650px;
 	display: flex;
+	flex-direction: column;
 }
 
-.cont:first-child{
-	margin: 10px;
-	width:fit-content;
-	height:fit-content;
-	flex: 1;
-}
-.cont:last-child{
-	margin: 10px;
-	font-size: medium;
+.formout1{
+	height: fit-content;
+	width: 100%;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
-	width:fit-content;
+}
+
+.cont1{
+	margin: 10px;
+	height: 400px;
+}
+
+.cont1:first-child{
+	height: 100px;
+	width: 200px;
+}
+.cont1:last-child{
+	width: 400px;
 	height:fit-content;
-	flex: 2;
+}
+
+
+.formout2{
+	height: fit-content;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap-reverse;
+}
+
+.cont2{
+	margin: 10px;
+	height: 400px;
+}
+
+.cont2:first-child{
+	height: 210px;
+	width: 200px;
+}
+.cont2:last-child{
+	height: 210px;
+	width: 400px;
 }
 
 .formin{
 	display: flex;
+	flex-direction: column;
 	margin: 10px;
-	gap: 10px;
+}
+
+.lain{
+	display: flex;
+}
+
+label{
+	flex: 1;
+	
+}
+
+input{
+	flex: 2;
+}
+
+select{
+	flex: 2;
+}
+
+
+@media (max-width:677px) {
+    
+    .cont2:first-child{
+		height: 250px;
+		width: 400px;
+	}
+	.cont2:last-child{
+		height: 300px;
+		width: 400px;
+	}
+
 }
 
 

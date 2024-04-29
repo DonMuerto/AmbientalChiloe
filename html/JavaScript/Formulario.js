@@ -53,12 +53,12 @@ const validarFormulario = (e) => {
         case "edad":
             let EdadV = e.target.value;
             if ((EdadV > 17 && EdadV < 36)) {
-                document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-incorrecto")
+                document.getElementById(`grupo__edad`).classList.remove("formulario_input-error")
                 document.getElementById(`grupo__edad`).classList.add("formulario_grupo-correcto")
                 document.querySelector(`#grupo__edad .formulario_input-error`).classList.remove('formulario_input-error-activo')
                 celdas['edad'] = true;
             }else{
-                document.getElementById(`grupo__edad`).classList.add("formulario_grupo-incorrecto")
+                document.getElementById(`grupo__edad`).classList.add("formulario_input-error")
                 document.getElementById(`grupo__edad`).classList.remove("formulario_grupo-correcto")
                 document.querySelector(`#grupo__edad .formulario_input-error`).classList.add('formulario_input-error-activo')
                 celdas['edad'] = false;
@@ -78,12 +78,12 @@ const validarFormulario = (e) => {
 const validarCampo = (expresion, input, campo) => {
 
     if(expresion.test(input.value)){ // expresiones.rut.test() <-- Retorna True or False
-        document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-incorrecto")
+        document.getElementById(`grupo__${campo}`).classList.remove("formulario_input-error")
         document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-correcto")
         document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.remove('formulario_input-error-activo')
         celdas[campo] = true;
     } else{
-        document.getElementById(`grupo__${campo}`).classList.add("formulario_grupo-incorrecto")
+        document.getElementById(`grupo__${campo}`).classList.add("formulario_input-error")
         document.getElementById(`grupo__${campo}`).classList.remove("formulario_grupo-correcto")
         document.querySelector(`#grupo__${campo} .formulario_input-error`).classList.add('formulario_input-error-activo')
         celdas[campo] = false;

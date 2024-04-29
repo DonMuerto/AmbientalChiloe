@@ -9,91 +9,111 @@
 <body>
         <form method="post" id="formulario" class="center">
 
-            <div class="formout">
-                <div class="cont">
-                    <h1>
-                        Datos personales
-                    </h1>
+            <div class="formout1">
+                <div class="cont1">
+                    <h1>Datos Personales</h1>
                 </div>
 
-                <div class="cont">
+                <div class="cont1">
                     <div id="grupo__rut" class="formin">
-                        <label for="rut">Rut</label>
-                        <input type="text" id="rut" >
-                        <p class="formulario_input-error">Rut no es válido. Debe estar en el formato correcto.</p>
+                        <div class="lain">
+                            <label for="rut">Rut</label>
+                            <input type="text" id="rut" class="inputStyle">
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error"> * Rut no es válido. Debe estar en el formato correcto. * </p>
                     </div>
                     <div id="grupo__materno" class="formin">
-                        <label for="materno">Apellido Materno</label>
-                        <input type="text" id="materno" required>
-                        <p class="formulario_input-error">Apellido Materno debe tener entre 3 y 20 caracteres</p>
+                        <div class="lain">
+                            <label for="materno">Apellido Materno</label>
+                            <input type="text" id="materno" class="inputStyle" required >
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error">* Apellido Materno debe tener entre 3 y 20 caracteres *</p>
                     </div>
                     <div class="formin" id="grupo__paterno">
-                        <label for="paterno">Apellido Paterno</label>
-                        <input type="text" id="paterno" required>
-                        <p class="formulario_input-error">Apellido Materno debe tener entre 3 y 20 caracteres</p>
+                        <div class="lain">
+                            <label for="paterno">Apellido Paterno</label>
+                            <input type="text" id="paterno" class="inputStyle" required>
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error">* Apellido Materno debe tener entre 3 y 20 caracteres *</p>
                     </div>
                     <div class="formin" id="grupo__nombre">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" required>
-                        <p class="formulario_input-error">Nombre debe tener entre 3 y 20 caracteres</p>
+                        <div class="lain">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" class="inputStyle" required>
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error">* Nombre debe tener entre 3 y 20 caracteres *</p>
                     </div>
                     <div class="formin">
-                        <label for="fecha">Fecha de nacimiento</label>
-                        <input type="date" id="fecha" required>
+                        <div class="lain">
+                            <label for="fecha">Fecha de nacimiento</label>
+                            <input type="date" id="fecha" class="inputStyle" required>
+                        </div>
                     </div>
                     <div class="formin" id="grupo__edad">
-                        <label for="edad" >Edad</label>
-                        <input type="number" id="edad" required>
-                        <p class="formulario_input-error">Edad debe ser un número entre 18 y 35</p>
+                        <div class="lain">
+                            <label for="edad" >Edad</label>
+                            <input type="number" id="edad" class="inputStyle" required>
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error">* Edad debe ser un número entre 18 y 35 *</p>
                     </div>
                     <div class="formin" >
-                        <label for="Genero">Género</label>
-                        <select id="Genero" required>
+                        <div class="lain">
+                            <label for="Genero">Género</label>
+                            <select id="Genero" required>
                             <option value="Otro">Otro</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                         </select>
+                        </div>
                     </div>
                     <div class="formin" id="grupo__email">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" required>
-                        <p class="formulario_input-error"></p>
+                        <div class="lain">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" class="inputStyle" required>
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error">* Debe estar en el formato correcto *</p>
                     </div>
                     <div class="formin" id="grupo__celular">
-                        <label for="celular">Celular</label>
-                        <input type="text" id="celular" required>
-                        <p class="formulario_input-error">Celular debe tener entre 9 y 12 caracteres</p>
+                        <div class="lain">
+                            <label for="celular">Celular</label>
+                            <input type="text" id="celular" class="inputStyle" required>
+                        </div>
+                        <p style="color:brown; font-size:small; text-align: center;"  class="formulario_input-error">* Celular debe tener entre 9 y 12 caracteres *</p>
                     </div>
                 </div>
             </div>
 
-
-
-            <div class="formout">
-                <div class="cont">
-                    <h1>
-                        Datos Profesionales
-                    </h1>
-                </div>
-
-                <div class="cont">
-                    <div class="formin">
-                        <label for="Profesion">Profesión</label>
-                        <input type="text" id="profesion" required>
-                    </div>
-                    <div class="formin">
-                        <label for="Motivacion">Motivación para postular al trabajo</label>
-                        <input type="textarea" id="motivacion" required>
-                    </div>
-                    <div class="formin">
-                        <input type="submit" onclick="Enviar()" value="Enviar">
-                    </div>
+            <div class="formout2">
+                <div class="cont2">
                     <div class="formin">
                         <button id="generarCAR">Generar carta</button>
                     </div>
                     <div class="formin">
                         <textarea id="carta" rows="10" cols="50"></textarea>
                     </div>
+                </div>
+
+                <div class="cont2">
+                    <br>
+                    <br>
+                    <div class="formin">
+                        <div class="lain">
+                            <label   label for="Profesion">Profesión</label>
+                            <input type="text" id="profesion" class="inputStyle" required>
+                        </div>
+                    </div>
+                    <div class="formin">
+                        <div class="lain">
+                            <label for="Motivacion">Motivación para postular al trabajo</label>
+                        <input type="textarea" id="motivacion" class="inputStyle" required>
+                        </div>
+                        
+                    </div>
+                    <div class="formin">
+                        <input type="submit" onclick="Enviar()" value="Enviar">
+                    </div>
+                    
+                    
                 </div>
             </div>
     <script src="JavaScript\Formulario.js"></script>
